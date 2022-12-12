@@ -26,7 +26,7 @@ def inference(model_inputs:dict) -> dict:
         file.write(mp3Bytes.getbuffer())
     
     # Run the model
-    result = model.transcribe("input.mp3", decode_options={"language": "de"}, compression_ratio_threshold=1)
+    result = model.transcribe("input.mp3", language="de", compression_ratio_threshold=1)
     output = {"text":result["text"]}
     os.remove("input.mp3")
     # Return the results as a dictionary
